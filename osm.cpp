@@ -7,7 +7,7 @@ void f(){}
 
 double osm_operation_time(unsigned int iterations)
 {
-  gettimeofday(&start_time, NULL);
+  gettimeofday(&start_time, 0);
   if (iterations == 0) {return -1;}
   start=gettimeofday();
   int a0, a1, a2, a3, a4, a5, a6, a7, a8, a9;
