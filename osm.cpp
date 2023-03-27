@@ -6,12 +6,13 @@
 #define TIMES 10
 #define FACTOR 1000
 
-struct timeval start_time;
-struct timeval end_time;
+
 void f(){}
 
 double osm_operation_time(unsigned int iterations)
 {
+  struct timeval start_time;
+  struct timeval end_time;
   gettimeofday(&start_time, NULL);
   if (iterations == 0) {return -1;}
   int a0, a1, a2, a3, a4, a5, a6, a7, a8, a9;
@@ -36,6 +37,8 @@ double osm_operation_time(unsigned int iterations)
 
 double osm_function_time(unsigned int iterations)
 {
+  struct timeval start_time;
+  struct timeval end_time;
   gettimeofday(&start_time, NULL);
   if (iterations == 0) {return -1;}
   int iter = ceil(iterations/TIMES);
@@ -59,6 +62,8 @@ double osm_function_time(unsigned int iterations)
 
 double osm_syscall_time(unsigned int iterations)
 {
+  struct timeval start_time;
+  struct timeval end_time;
   gettimeofday(&start_time, NULL);
   if (iterations == 0) {return -1;}
   int iter = ceil(iterations/TIMES);
