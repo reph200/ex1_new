@@ -1,7 +1,7 @@
 #include <sys/time.h>
 #include <stdio.h>
 #include <cmath>
-#include osm.h
+#include "osm.h"
 
 #define TIMES 10
 #define FACTOR 1000
