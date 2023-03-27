@@ -1,3 +1,6 @@
+#include <sys/time.h>
+#include <stdio.h>
+
 #define TIMES 10
 #define FACTOR 1000
 
@@ -7,9 +10,8 @@ void f(){}
 
 double osm_operation_time(unsigned int iterations)
 {
-  gettimeofday(&start_time, 0);
+  gettimeofday(&start_time, NULL);
   if (iterations == 0) {return -1;}
-  start=gettimeofday();
   int a0, a1, a2, a3, a4, a5, a6, a7, a8, a9;
   int iter = ceil(iterations/TIMES);
   for(int i = 0; i<iter ;i++)
@@ -34,7 +36,6 @@ double osm_function_time(unsigned int iterations)
 {
   gettimeofday(&start_time, NULL);
   if (iterations == 0) {return -1;}
-  start=gettimeofday();
   int iter = ceil(iterations/TIMES);
   for(int i = 0; i<iter ;i++)
   {
@@ -58,7 +59,6 @@ double osm_syscall_time(unsigned int iterations)
 {
   gettimeofday(&start_time, NULL);
   if (iterations == 0) {return -1;}
-  start=gettimeofday();
   int iter = ceil(iterations/TIMES);
   for(int i = 0; i<iter ;i++)
   {
